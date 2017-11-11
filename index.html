@@ -37,10 +37,10 @@
         <p>Front End on HTML & CSS <br>Turn-key websites development</p>
         </div>
       </div>
-      <a class="main-down" href="#"><i class="icon-down"></i></a>
+      <a class="main-down slowly" href="#portfolio"><i class="icon-down"></i></a>
     </div>
 
-    <div class="portfolio"> 
+    <div class="portfolio" id="portfolio"> 
       <div class="container">
         <h2 class="section-header">Portfolio </h2>
         <div class="row"> 
@@ -76,14 +76,14 @@
           <div class="col-md-6">
           <strong>Follow My Story</strong>
           <div class="social-links">
-            <a href="#"><i class="icon-facebook"></i></a>
-            <a href="#"><i class="icon-instagram"></i></a>
-            <a href="#"><i class="icon-vk"></i></a>
+            <a href="https://www.facebook.com/lekanovaanna"><i class="icon-facebook"></i></a>
+            <a href="https://www.instagram.com/larisaborsh/"><i class="icon-instagram"></i></a>
+            <a href="https://vk.com/lekanova"><i class="icon-vk"></i></a>
           </div>
          </div>
          <div class="col-md-3">
           <strong>Get in Touch</strong>
-          <a href="https://vk.me/lekanova" class="offer-btn">Order Website</a>
+          <a href="http://m.me/lekanovaanna" class="offer-btn">Order Website</a>
          </div>
        </div>
       </div>
@@ -127,5 +127,23 @@
         });
       });
     </script>
+    <script>
+    $(document).ready(function() {
+
+            //навигация - плавный скроллинг к якорю
+            $(".slowly").on("click","a", function (event) {
+                //отменяем стандартную обработку нажатия по ссылке
+                event.preventDefault();
+                //забираем идентификатор бока с атрибута href
+                var id  = $(this).attr('href'),
+                //узнаем высоту от начала страницы до блока на который ссылается якорь
+                    top = $(id).offset().top;
+                //анимируем переход на расстояние - top за 1500 мс
+                $('body,html').animate({scrollTop: top}, 500);
+            });
+}); 
+    </script>
   </body>
 </html>
+
+
